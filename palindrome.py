@@ -10,21 +10,15 @@ Input: x = 121
 Output: true'''
 
 class Solution:
-    def isPalindrome(self, x):
-        a = True
-        b = False
-        n = x
-        r = 0
-        while x > 0:
-            s = x % 10
-            r = 10*r + s
-            x = x // 10
-        if r == n:
-            return a
+    def isPalindrome(self, x: int) -> bool:
+        n=x
+        r=0
+        while x >0:
+            s=x%10
+            r=r*10+s
+            x=int(x/10)
+        if n == r:
+            return True
         else:
-            return b
+            return False
         
-num = int(input('Enter'))
-obj = Solution()
-p = obj.isPalindrome(num)
-print(p)
